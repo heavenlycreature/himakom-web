@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="css/index.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100" style="background-image: url('{{ asset('backgroundhalamanjurnal.jpg') }}'); background-size: cover;">
+<body class="bg-gray-100" style="background-image: url('{{ asset('img/backgroundhalamanjurnal.png') }}'); background-size: cover;">
 
 <!-- Header -->
 <header class="bg-white shadow-md">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
         <div class="flex items-center">
-            <img src="{{ asset('LOGO HIMAKOM') }}" alt="Logo" class="h-10 mr-3">
+            <img src="{{ asset('img/logohimakom.png') }}" alt="Logo" class="h-10 mr-3">
             <span class="text-lg font-bold text-purple-800">Universitas Pakuan</span>
         </div>
         <nav class="space-x-6">
@@ -32,7 +32,7 @@
     <div class="flex flex-col md:flex-row bg-white rounded-lg shadow-lg overflow-hidden">
         <!-- Box Kiri -->
         <div class="w-full md:w-1/2 h-96">
-            <img src="{{ asset('images/jurnal_preview.jpg') }}" alt="Preview Jurnal" class="object-cover h-full w-full">
+            <img src="{{ asset('img/previewjurnal.png') }}" alt="Preview Jurnal" class="object-cover h-full w-full">
         </div>
         <!-- Box Kanan -->
         <div class="w-full md:w-1/2 p-6">

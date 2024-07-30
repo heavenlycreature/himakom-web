@@ -8,13 +8,13 @@
     <link rel="stylesheet" href="css/index.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
 </head>
-<body class="bg-gray-100" style="background-image: url('{{ asset('backgroundhalamanjurnal.jpg') }}'); background-size: cover;">
+<body class="bg-gray-100">
 
 <!-- Header -->
 <header class="bg-white shadow-md">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
         <div class="flex items-center">
-            <img src="{{ asset('LOGO HIMAKOM') }}" alt="Logo" class="h-10 mr-3">
+            <img src="{{ asset('img/logohimakom.png') }}" alt="Logo" class="h-10 mr-3">
             <span class="text-lg font-bold text-purple-800">Universitas Pakuan</span>
         </div>
         <nav class="space-x-6">
@@ -34,7 +34,7 @@
     
     <!-- Gambar Artikel -->
     <div class="w-full h-64 mb-6">
-        <img src="{{ asset('images/artikel_image.jpg') }}" alt="Gambar Artikel" class="object-cover h-full w-full">
+        <img src="{{ asset('img/coverartikel&berita.png') }}" alt="Gambar Artikel" class="object-cover h-full w-full">
     </div>
     
     <!-- Paragraf Artikel -->
@@ -48,7 +48,7 @@
     
     <!-- Informasi Himpunan -->
     <div class="flex items-center mb-10">
-        <img src="{{ asset('images/himpunan_logo.png') }}" alt="Logo Himpunan" class="h-20 w-20 mr-4">
+        <img src="{{ asset('img/logohimakom') }}" alt="Logo Himpunan" class="h-20 w-20 mr-4">
         <div>
             <h3 class="text-xl font-bold text-gray-800">HIMAKOM</h3>
             <p class="text-gray-600">HIMAKOM Universitas Pakuan adalah organisasi mahasiswa yang berfokus pada pengembangan akademik dan keterampilan anggota di bidang komputer. HIMAKOM berperan sebagai wadah bagi mahasiswa untuk memperdalam ilmu matematika melalui berbagai kegiatan seperti seminar, workshop, kompetisi, dan diskusi ilmiah.</p>
@@ -93,7 +93,7 @@
                 </div>
             </div>
             <div class="w-full md:w-1/3 text-center">
-                <img src="{{ asset('images/himakom_logo.png') }}" alt="Logo" class="h-10 mx-auto mb-4">
+                <img src="{{ asset('img/logohimakom.png') }}" alt="Logo" class="h-10 mx-auto mb-4">
                 <p>&copy; 2024 HIMAKOM Universitas Pakuan</p>
             </div>
             <div class="w-full md:w-1/3 text-right">

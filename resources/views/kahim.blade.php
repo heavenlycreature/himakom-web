@@ -13,7 +13,7 @@
 <header class="bg-white shadow-md">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
         <div class="flex items-center">
-            <img src="{{ asset('LOGO HIMAKOM') }}" alt="Logo" class="h-10 mr-3">
+            <img src="{{ asset('img/logohimakom.png') }}" alt="Logo" class="h-10 mr-3">
             <span class="text-lg font-bold text-purple-800">Universitas Pakuan</span>
         </div>
         <nav class="space-x-6">
@@ -29,7 +29,7 @@
 <!-- Main Content -->
 <main>
     <!-- Bagian Ketua Himpunan -->
-    <section class="relative" style="background-image: url('/mnt/data/backgroundhalamankahim.jpg'); background-size: cover; background-position: center;">
+    <section class="relative" style="background-image: url('img/backgoundhalamankahim.png'); background-size: cover; background-position: center;">
         <div class="container mx-auto flex items-center py-24">
             <div class="bg-transparent p-8 max-w-lg">
                 <h1 class="text-4xl text-purple-800 font-bold">Hello, I'm</h1>
@@ -38,16 +38,16 @@
                 <p class="text-white">Selamat datang di halaman resmi Ketua Himpunan Mahasiswa Komputer (HIMAKOM). Saya Budi Santoso, merasa sangat terhormat untuk bisa memimpin HIMAKOM periode 2024-2025. HIMAKOM adalah wadah bagi mahasiswa jurusan komputer untuk berkumpul, berbagi ilmu, dan berkembang bersama.</p>
             </div>
             <div>
-                <img src="/mnt/data/Ketua Himakom.png" alt="Ketua HIMAKOM" class="h-96">
+                <img src="img/kahim.png" alt="Ketua HIMAKOM" class="h-96">
             </div>
         </div>
     </section>
 
     <!-- Visi Misi Section -->
-    <section class="bg-custom-visi-misi text-black py-20">
+    <section class="bg-custom-visi-misi text-black py-20" style="background-image: url('img/backgroundvisimisi.png'); background-size: cover; background-position: center;">
         <div class="container mx-auto flex flex-col md:flex-row items-center px-6">
             <div class="md:w-1/2">
-                <img src="{{ asset('images/fotobersamahimpunan.jpg') }}" alt="Foto Bersama Himpunan" class="rounded">
+                <img src="{{ asset('img/fotohimpunan.png') }}" alt="Foto Bersama Himpunan" class="rounded">
             </div>
             <div class="md:w-1/2 bg-transparent-box p-8 rounded">
                 <h2 class="text-4xl font-bold mb-4">VISI & MISI</h2>
@@ -63,27 +63,27 @@
     </section>
 
     <!-- Bagian Program Kerja -->
-    <section class="relative" style="background-image: url('/mnt/data/programkerjabackground.jpg'); background-size: cover; background-position: center;">
+    <section class="relative" style="background-image: url('img/backgroundproker.png'); background-size: cover; background-position: center;">
         <div class="container mx-auto py-24">
             <h2 class="text-4xl font-bold text-center text-purple-800 mb-12">Program Kerja</h2>
             <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <img src="{{ asset('path/to/logo1.png') }}" alt="Logo Proker" class="mx-auto mb-4">
+                    <img src="{{ asset('img/logoproker.png') }}" alt="Logo Proker" class="mx-auto mb-4">
                     <h3 class="text-xl font-semibold text-purple-800 mb-2">Workshop dan Seminar</h3>
                     <p>Mengadakan workshop dan seminar rutin dengan topik terkini di dunia teknologi.</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <img src="{{ asset('path/to/logo2.png') }}" alt="Logo Proker" class="mx-auto mb-4">
+                    <img src="{{ asset('img/logoproker.png') }}" alt="Logo Proker" class="mx-auto mb-4">
                     <h3 class="text-xl font-semibold text-purple-800 mb-2">Workshop dan Seminar</h3>
                     <p>Mengadakan workshop dan seminar rutin dengan topik terkini di dunia teknologi.</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <img src="{{ asset('path/to/logo3.png') }}" alt="Logo Proker" class="mx-auto mb-4">
+                    <img src="{{ asset('img/logoproker.png') }}" alt="Logo Proker" class="mx-auto mb-4">
                     <h3 class="text-xl font-semibold text-purple-800 mb-2">Workshop dan Seminar</h3>
                     <p>Mengadakan workshop dan seminar rutin dengan topik terkini di dunia teknologi.</p>
                 </div>
                 <div class="bg-white p-8 rounded-lg shadow-lg text-center">
-                    <img src="{{ asset('path/to/logo4.png') }}" alt="Logo Proker" class="mx-auto mb-4">
+                    <img src="{{ asset('img/logoproker.png') }}" alt="Logo Proker" class="mx-auto mb-4">
                     <h3 class="text-xl font-semibold text-purple-800 mb-2">Workshop dan Seminar</h3>
                     <p>Mengadakan workshop dan seminar rutin dengan topik terkini di dunia teknologi.</p>
                 </div>
@@ -111,7 +111,7 @@
                 </div>
             </div>
             <div class="w-full md:w-1/3 text-center">
-                <img src="{{ asset('images/himakom_logo.png') }}" alt="Logo" class="h-10 mx-auto mb-4">
+                <img src="{{ asset('img/logohimakom.png') }}" alt="Logo" class="h-10 mx-auto mb-4">
                 <p>&copy; 2024 HIMAKOM Universitas Pakuan</p>
             </div>
             <div class="w-full md:w-1/3 text-right">

@@ -15,7 +15,7 @@
 <header class="bg-white shadow-md">
     <div class="container mx-auto px-6 py-3 flex justify-between items-center">
         <div class="flex items-center">
-            <img src="{{ asset('LOGO HIMAKOM') }}" alt="Logo" class="h-10 mr-3">
+            <img src="{{ asset('img/logohimakom.png') }}" alt="Logo" class="h-10 mr-3">
             <span class="text-lg font-bold text-purple-800">Universitas Pakuan</span>
         </div>
         <nav class="space-x-6">
@@ -29,7 +29,7 @@
 </header>
 
 <!-- Hero Section -->
-<section id="beranda" class="relative h-screen bg-cover bg-center text-white" style="background-image: url('{{ asset('FOTO BACKGROUND BERANDA') }}');">
+<section id="beranda" class="relative h-screen bg-cover bg-center text-white" style="background-image: url('{{ asset('img/backgroundberanda.jpg') }}');">
     <div class="container mx-auto h-full flex flex-col justify-center items-center">
         <h1 class="text-5xl font-bold fade-in">SELAMAT DATANG DI HIMAKOM</h1>
         <button onclick="document.getElementById('tentang-kami').scrollIntoView({ behavior: 'smooth' })" class="mt-4 px-6 py-3 bg-purple-800 rounded-lg text-white">Explore</button>
@@ -43,10 +43,10 @@
 </section>
 
 <!-- Tentang Kami -->
-<section id="tentang-kami" class="py-20 bg-white">
+<section id="tentang-kami" class="py-20 bg-white" style="background-image: url('{{ asset('img/backgroundtentangkami.jpg') }}');">
     <div class="container mx-auto px-6 flex flex-wrap">
         <div class="w-full md:w-1/2">
-            <img src="{{ asset('ROUTE FOTO') }}" alt="Tentang Kami" class="w-full object-cover object-center h-96">
+            <img src="{{ asset('img/fototentangkami.png') }}" alt="Tentang Kami" class="w-full object-cover object-center h-96">
         </div>
         <div class="w-full md:w-1/2 flex flex-col justify-center px-6 slide-up">
             <h2 class="text-3xl font-bold mb-4">Selamat Datang Di HIMAKOM Universitas Pakuan</h2>
@@ -61,10 +61,10 @@
 </section>
 
 <!-- Kenalan Yuk -->
-<section id="kenalan-yuk" class="py-20 bg-white">
+<section id="kenalan-yuk" class="py-20 bg-white" style="background-image: url('{{ asset('img/backgroundindex_kahim.png') }}');">
     <div class="container mx-auto px-6 flex flex-wrap">
         <div class="w-full md:w-1/2">
-            <img src="{{ asset('FOTO KAHIM') }}" alt="Ketua HIMAKOM" class="w-full h-96 object-cover object-center">
+            <img src="{{ asset('img/kahim.png') }}" alt="Ketua HIMAKOM" class="w-full h-96 object-cover object-center">
         </div>
         <div class="w-full md:w-1/2 flex flex-col justify-center px-6 slide-up">
             <h2 class="text-3xl font-bold mb-4">Kenalan, Yuk! Ketua HIMAKOM</h2>
@@ -75,19 +75,19 @@
 </section>
 
 <!-- Artikel -->
-<section id="artikel" class="py-20 bg-white">
+<section id="artikel" class="py-20 bg-white" style="background-image: url('{{ asset('img/backgroundindex_artikel.png') }}');">
     <div class="container mx-auto px-6 text-center">
         <h2 class="text-3xl font-bold mb-8">ARTIKEL</h2>
         <div class="swiper-container">
             <div class="swiper-wrapper">
                 <!-- Add your article items here -->
                 <div class="swiper-slide bg-gray-200 p-6 rounded-lg">
-                    <img src="{{ asset('FOTO') }}" alt="Article 1" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <img src="{{ asset('img/coverartikel&berita.png') }}" alt="Article 1" class="h-40 w-full object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-bold mb-2">Graduation Day</h3>
                     <p class="text-gray-600">Lihat Siapa Saja Mahasiswa Yang Mendapatkan Cumlaude</p>
                 </div>
                 <div class="swiper-slide bg-gray-200 p-6 rounded-lg">
-                    <img src="{{ asset('FOTO') }}" alt="Article 2" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <img src="{{ asset('img/coverartikel&berita.png') }}" alt="Article 2" class="h-40 w-full object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-bold mb-2">Belajar Santai</h3>
                     <p class="text-gray-600">Belajar di Ruang Evos Saja</p>
                 </div>
@@ -98,25 +98,25 @@
 </section>
 
 <!-- Berita Terkini -->
-<section id="berita" class="py-20 bg-white">
+<section id="berita" class="py-20 bg-white" style="background-image: url('{{ asset('img/backgroundindex_artikel.png') }}');">
     <div class="container mx-auto px-6">
         <h2 class="text-3xl font-bold mb-8 text-center">Berita & Blog Terbaru</h2>
         <div class="flex flex-wrap -mx-6">
             <div class="w-full lg:w-2/3 px-6 mb-6">
                 <div class="bg-gray-200 p-6 rounded-lg">
-                    <img src="{{ asset('FOTO') }}" alt="News 1" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <img src="{{ asset('img/coverartikel&berita') }}" alt="News 1" class="h-40 w-full object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-bold mb-2">Belajar Santai</h3>
                     <p class="text-gray-600">Belajar di Ruang Evos Saja</p>
                 </div>
             </div>
             <div class="w-full lg:w-1/3 px-6 mb-6">
                 <div class="bg-gray-200 p-6 rounded-lg mb-6">
-                    <img src="{{ asset('FOTO') }}" alt="News 2" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <img src="{{ asset('img/coverartikel&berita') }}" alt="News 2" class="h-40 w-full object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-bold mb-2">Tips Cara Bertahan</h3>
                     <p class="text-gray-600">Tips Cara Bertahan Saat Tinggal Di Kampus</p>
                 </div>
                 <div class="bg-gray-200 p-6 rounded-lg">
-                    <img src="{{ asset('FOTO') }}" alt="News 3" class="h-40 w-full object-cover rounded-lg mb-4">
+                    <img src="{{ asset('img/coverartikel&berita') }}" alt="News 3" class="h-40 w-full object-cover rounded-lg mb-4">
                     <h3 class="text-xl font-bold mb-2">Kamu Harus Tahu</h3>
                     <p class="text-gray-600">Barang Apa Yang Sering Dibawa Oleh Mahasiswa</p>
                 </div>
