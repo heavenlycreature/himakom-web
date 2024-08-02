@@ -1,5 +1,7 @@
 <?php
 
+use App\Http\Controllers\Auth\LoginController;
+use App\Http\Controllers\Auth\LogoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -14,5 +16,27 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return view('welcome');
-});
+    return view('pages.main', [
+        'title' => 'home',
+    ]);
+})->name('beranda');
+Route::get('/tentang', function() {
+    return view('pages.about', [
+        'title' => 'Tentang Kami',
+    ]);
+})->name('tentang');
+Route::get('/jurnal', function() {
+    return view('pages.jurnal.journal', [
+        'title' => 'Daftar Jurnal',
+    ]);
+})->name('jurnal');
+// Login method
+Route::get('/login', [LoginController::class, 'index'])->name('login');
+Route::post('/login', [LoginController::class, 'store'])->name('login.store');
+Route::get('/dashboard', function (){
+        return view('admin.dashboard', [
+            'name' => auth()->user()->name,
+        ]
+);
+})->middleware('auth');
+Route::post('/logout', LogoutController::class)->name('logout');
