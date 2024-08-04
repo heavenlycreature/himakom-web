@@ -2,6 +2,8 @@
 
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
+use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\DashboardController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -30,13 +32,12 @@ Route::get('/jurnal', function() {
         'title' => 'Daftar Jurnal',
     ]);
 })->name('jurnal');
+
+Route::get('/artikel', [BlogsController::class, 'index'])->name('artikel');
 // Login method
-Route::get('/login', [LoginController::class, 'index'])->name('login');
-Route::post('/login', [LoginController::class, 'store'])->name('login.store');
-Route::get('/dashboard', function (){
-        return view('admin.dashboard', [
-            'name' => auth()->user()->name,
-        ]
-);
-})->middleware('auth');
+Route::middleware(['guest'])->group(function () {
+    Route::get('/login', [LoginController::class, 'index'])->name('login');
+    Route::post('/login', [LoginController::class, 'store'])->name('login.store');
+});
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
 Route::post('/logout', LogoutController::class)->name('logout');

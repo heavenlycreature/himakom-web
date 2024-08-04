@@ -1,7 +1,6 @@
 @extends('components.layout.index')
 
 @section('content')  
-<x-navbar/>  
 <!-- Search Bar -->
 <div class="container mx-auto px-6 py-10">
     <div class="flex justify-center">
@@ -21,8 +20,7 @@
     <div id="pagination" class="flex justify-center space-x-4">
         <!-- nambah sesuai js -->
     </div>
-</div>
-<x-footer/>    
+</div>   
 
 <script>
     const journals = [

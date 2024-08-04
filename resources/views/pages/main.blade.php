@@ -1,7 +1,6 @@
 @extends('components.layout.index')
 
 @section('content')
-<x-navbar />
 
     <!-- Hero Section -->
 <section id="beranda" class="relative h-screen bg-cover bg-center text-white" style="background-image: url('{{ asset('img/pages/home/bg-home.jpg') }}');">
@@ -102,5 +101,4 @@
         </div>
     </div>
 </section>
-<x-footer/>
 @endsection

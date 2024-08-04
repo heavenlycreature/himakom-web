@@ -13,15 +13,10 @@
     <title>{{ $title ?? config('app.name') }}</title>
 </head>
 <body>
-    @if ($currentRoute !== 'login' && !$is404)
-    <x-navbar/>
-    @endif
-    <div class="container {{ $currentRoute !== 'login' ? "pt-16" : ""}} max-w-full">
-        @yield('content')
-    </div>
-    @if ($currentRoute !== 'login' && !$is404)
-    <x-footer/>
-    @endif
+  <x-sidebar :name="$name"/>
+  <div class="p-4 sm:ml-64">
+    @yield('content')
+  </div>
 <script src="https://kit.fontawesome.com/11df88e4bb.js" crossorigin="anonymous"></script>
 </body>
 </html>

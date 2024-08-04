@@ -1,17 +1,16 @@
 @extends('components.layout.index')
 
 @section('content')
-<x-navbar/>
     <!-- Main Content -->
 <main>
     <!-- Bagian Ketua Himpunan -->
-    <section class="relative" style="background-image: url('{{ asset('img/background/backgroundhalamankahim.png') }}'); background-size: cover; background-position: center;">
+    <section class="relative lg:bg-about bg-cover bg-center">
         <div class="container mx-auto flex flex-col lg:flex-row lg:items-center py-24">
             <div class="bg-transparent p-8 max-w-lg">
                 <h1 class="text-4xl text-slate-700 lg:text-purple-500 font-bold">Hello, I'm</h1>
-                <h2 class="text-5xl text-slate-200 lg:text-purple-600 font-extrabold">Budi Santoso</h2>
+                <h2 class="text-5xl text-gray-800 lg:text-purple-600 font-extrabold">Budi Santoso</h2>
                 <h3 class="text-2xl lg:text-slate-500 text-purple-400 font-semibold mb-4">Ketua HIMAKOM</h3>
-                <p class="text-slate-300 lg:text-slate-400 ">Selamat datang di halaman resmi Ketua Himpunan Mahasiswa Komputer (HIMAKOM). Saya Budi Santoso, merasa sangat terhormat untuk bisa memimpin HIMAKOM periode 2024-2025. HIMAKOM adalah wadah bagi mahasiswa jurusan komputer untuk berkumpul, berbagi ilmu, dan berkembang bersama.</p>
+                <p class="text-slate-600 lg:text-slate-400 ">Selamat datang di halaman resmi Ketua Himpunan Mahasiswa Komputer (HIMAKOM). Saya Budi Santoso, merasa sangat terhormat untuk bisa memimpin HIMAKOM periode 2024-2025. HIMAKOM adalah wadah bagi mahasiswa jurusan komputer untuk berkumpul, berbagi ilmu, dan berkembang bersama.</p>
             </div>
             <div class="mx-auto">
                 <img src="img/kahim.png" alt="Ketua HIMAKOM" class="h-96">
@@ -67,6 +66,4 @@
         </div>
     </section>
 </main>
-
-<x-footer/>
 @endsection

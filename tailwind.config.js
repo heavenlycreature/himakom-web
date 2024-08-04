@@ -8,7 +8,8 @@ module.exports = {
   theme: {
     extend: {
       backgroundImage:{
-        'error-page' : "url('/public/img/background/error-page.png')"
+        'error-page' : "url('/public/img/background/error-page.png')",
+        'about': "url('/public/img/background/backgroundhalamankahim.png')"
       }
     },
   },
