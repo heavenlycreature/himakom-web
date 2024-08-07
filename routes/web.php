@@ -4,6 +4,8 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\KahimController;
+use App\Http\Controllers\ProkerController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -39,5 +41,22 @@ Route::middleware(['guest'])->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
     Route::post('/login', [LoginController::class, 'store'])->name('login.store');
 });
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware('auth')->name('dashboard');
-Route::post('/logout', LogoutController::class)->name('logout');
+// Authenticated Method
+Route::middleware(['auth'])->group(function () {
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::post('/logout', LogoutController::class)->name('logout');
+    
+    // Kahim method
+    Route::get('/kahim/{kahim}/edit', [KahimController::class, 'edit'])->name('kahim.edit');
+    Route::match(['PUT', 'PATCH'], '/kahim/{id}', [KahimController::class, 'update'])->name('kahim.update');
+    
+    // Proker
+    // create
+    Route::get('/proker/create', [ProkerController::class, 'create'])->name('proker.create');
+    Route::post('/proker', [ProkerController::class, 'store'])->name('proker.store');
+    // edit
+    Route::get('/proker/{id}/edit', [ProkerController::class, 'edit'])->name('proker.edit');
+    Route::match(['PUT', 'PATCH'], '/proker/{id}', [ProkerController::class, 'update'])->name('proker.update');
+    // delete
+    Route::delete('/proker/{id}', [ProkerController::class, 'destroy'])->name('proker.destroy');
+});

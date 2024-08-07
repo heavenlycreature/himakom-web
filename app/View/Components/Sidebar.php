@@ -6,16 +6,14 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class NewsList extends Component
+class Sidebar extends Component
 {
-    public $name;
 
 
     /**
      * Create a new component instance.
      */
-    public function __construct($name){
-        $this->name = $name;
+    public function __construct(){
     }
 
     /**

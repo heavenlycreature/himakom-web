@@ -7,5 +7,8 @@ use Illuminate\Database\Eloquent\Model;
 
 class Kahim extends Model
 {
+    protected $fillable = [
+      'nama', 'bio', 'img', 'visi-misi'
+    ];
     use HasFactory;
 }

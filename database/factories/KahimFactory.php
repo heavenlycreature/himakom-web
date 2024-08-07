@@ -17,7 +17,10 @@ class KahimFactory extends Factory
     public function definition(): array
     {
         return [
-            //
+            'nama' => $this->faker->sentence(5),
+            'bio' => $this->faker->word(mt_rand(13, 27)),
+            'img' => $this->faker->imageUrl(480, 640, 'people', true),
+            'visi-misi' => collect($this->faker->paragraphs(mt_rand(2, 8)))->map(fn($p) => "<li>$p</li>")->implode(''),
         ];
     }
 }

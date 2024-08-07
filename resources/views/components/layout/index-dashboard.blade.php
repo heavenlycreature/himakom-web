@@ -11,12 +11,27 @@
     <link rel="icon" href="{{ asset('img/logo/logo.png') }}" type="image/icon type">
     @vite(['resources/css/app.css','resources/js/app.js' ])
     <title>{{ $title ?? config('app.name') }}</title>
-</head>
-<body>
-  <x-sidebar :name="$name"/>
-  <div class="p-4 sm:ml-64">
-    @yield('content')
-  </div>
+    <link rel="stylesheet" type="text/css" href="https://unpkg.com/trix@2.0.0/dist/trix.css">
+    <script type="text/javascript" src="https://unpkg.com/trix@2.0.0/dist/trix.umd.min.js"></script>
+    <style>
+      .trix-content ul {
+          list-style-type: disc !important;
+          padding-left: 2.5em !important;
+      }
+      .trix-content ol {
+          list-style-type: decimal !important;
+          padding-left: 2.5em !important;
+      }
+      .trix-content ul li, .trix-content ol li {
+          display: list-item !important;
+      }
+  </style>
+  </head>
+  <body>
+    <x-sidebar />
+    <div class="p-4 sm:ml-64">
+      @yield('content')
+    </div>
 <script src="https://kit.fontawesome.com/11df88e4bb.js" crossorigin="anonymous"></script>
 </body>
 </html>
