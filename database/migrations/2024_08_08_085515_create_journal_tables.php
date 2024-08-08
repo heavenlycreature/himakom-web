@@ -11,10 +11,16 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('prokers', function (Blueprint $table) {
+        Schema::create('journals', function (Blueprint $table) {
             $table->id();
             $table->string('judul');
-            $table->text('deskripsi');
+            $table->text('tujuan');
+            $table->string('penerbit');
+            $table->string('tahun');
+            $table->string('sumber');
+            $table->string('rujuk');
+            $table->string('volume');
+            $table->string('pdf')->nullable();
             $table->timestamps();
         });
     }
@@ -24,6 +30,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('prokers');
+        Schema::dropIfExists('journals');
     }
 };

@@ -18,7 +18,7 @@
         <div class="mt-6">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload file</label>
             @if ($kahim->img)
-            <img src="{{ asset( 'storage/' . $kahim->img) }}" class="img-preview h-auto max-w-lg rounded-lg" alt="image description">
+            <img src="{{ asset( 'storage/' . $kahim->img) }}" class="img-preview h-auto max-w-lg rounded-lg">
             @else
             <img class="img-preview h-auto max-w-lg rounded-lg" style="display: none;">
             @endif

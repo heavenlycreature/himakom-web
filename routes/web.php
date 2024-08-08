@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\JournalController;
 use App\Http\Controllers\KahimController;
 use App\Http\Controllers\ProkerController;
 use Illuminate\Support\Facades\Route;
@@ -47,16 +48,19 @@ Route::middleware(['auth'])->group(function () {
     Route::post('/logout', LogoutController::class)->name('logout');
     
     // Kahim method
-    Route::get('/kahim/{kahim}/edit', [KahimController::class, 'edit'])->name('kahim.edit');
-    Route::match(['PUT', 'PATCH'], '/kahim/{id}', [KahimController::class, 'update'])->name('kahim.update');
+    Route::get('/dashboard/kahim/{kahim}/edit', [KahimController::class, 'edit'])->name('kahim.edit');
+    Route::match(['PUT', 'PATCH'], '/dashboard/kahim/{id}', [KahimController::class, 'update'])->name('kahim.update');
     
     // Proker
     // create
-    Route::get('/proker/create', [ProkerController::class, 'create'])->name('proker.create');
-    Route::post('/proker', [ProkerController::class, 'store'])->name('proker.store');
+    Route::get('/dashboard/proker/create', [ProkerController::class, 'create'])->name('proker.create');
+    Route::post('/dashboard/proker', [ProkerController::class, 'store'])->name('proker.store');
     // edit
-    Route::get('/proker/{id}/edit', [ProkerController::class, 'edit'])->name('proker.edit');
-    Route::match(['PUT', 'PATCH'], '/proker/{id}', [ProkerController::class, 'update'])->name('proker.update');
+    Route::get('/dashboard/proker/{id}/edit', [ProkerController::class, 'edit'])->name('proker.edit');
+    Route::match(['PUT', 'PATCH'], '/dashboard/proker/{id}', [ProkerController::class, 'update'])->name('proker.update');
     // delete
-    Route::delete('/proker/{id}', [ProkerController::class, 'destroy'])->name('proker.destroy');
+    Route::delete('/dashboard/proker/{id}', [ProkerController::class, 'destroy'])->name('proker.destroy');
+
+    // Journal
+    Route::get('/dashboard/journal', [JournalController::class, 'index'])->name('journal.index');
 });

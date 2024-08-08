@@ -5,6 +5,7 @@ namespace Database\Seeders;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 
 use App\Models\Blogs;
+use App\Models\Journal;
 use App\Models\Kahim;
 use App\Models\Proker;
 use Illuminate\Database\Seeder;
@@ -20,5 +21,6 @@ class DatabaseSeeder extends Seeder
         Blogs::factory(10)->create();
         Kahim::factory(1)->create();
         Proker::factory(3)->create();
+        Journal::factory(14)->create();
     }
 }
