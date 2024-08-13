@@ -14,6 +14,8 @@ class Blogs extends Model
     protected $guarded = [
         'id',
     ];
+    protected $with = ['user'];
+    
     public function user(){
         return $this->belongsTo(User::class);
     }
@@ -23,7 +25,7 @@ class Blogs extends Model
     }
     public function getExcerptAttribute(){
         $plainText = strip_tags($this->description);
-        return Str::words($plainText, 150, '...');
+        return Str::words($plainText, 10, '...');
     }
     public function getFormattedPublishAttribute()
     {

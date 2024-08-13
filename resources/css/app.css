@@ -1,3 +1,24 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+  /* CSS for the fixed navbar */
+  .navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Optional shadow for effect */
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+  }
+
+  /* Transition for mobile menu */
+  .mobile-menu {
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Example of additional styles */
+  .navbar-scrolled {
+    background-color: rgba(255, 255, 255, 1); /* Fully opaque white background */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  }

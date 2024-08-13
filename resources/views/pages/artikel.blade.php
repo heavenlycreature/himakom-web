@@ -50,6 +50,7 @@
     </div>
 </div>
 
+<x-footer/>
 
 
 <script>

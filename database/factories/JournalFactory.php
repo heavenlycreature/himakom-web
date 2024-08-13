@@ -17,6 +17,7 @@ class JournalFactory extends Factory
     public function definition(): array
     {
         return [
+            'slug' => $this->faker->slug(),
             'judul' => $this->faker->sentence(mt_rand(2, 10)),
             'tujuan' => $this->faker->sentence(mt_rand(9, 23)),
             'penerbit' => $this->faker->name(),

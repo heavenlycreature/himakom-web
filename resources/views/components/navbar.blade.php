@@ -1,4 +1,4 @@
-<header class="fixed z-[99] w-full bg-white">
+<header class="z-[999] w-full bg-transparent">
     <nav class="mx-auto flex max-w-7xl items-center justify-between p-6 lg:px-8" aria-label="Global">
       <div class="flex gap-2 lg:flex-1">
         <a href="#" class="-m-1.5 p-1.5">
@@ -88,6 +88,18 @@
     </div>
   </header>
  <script>
+  //navbar fixed
+  window.onscroll = function () {
+    const nav = document.querySelector('header');
+    const fixedNav = nav.offsetTop;
+
+    // Using pageYOffset to detect scrolling down
+    if (window.pageYOffset > fixedNav) {
+        nav.classList.add("navbar");
+    } else {
+        nav.classList.remove("navbar");
+    }
+}
   document.addEventListener('DOMContentLoaded', function() {
 
     const mobileMenuButton = document.querySelector('.mobile-menu-button');

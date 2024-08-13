@@ -11,9 +11,7 @@
         </div>
         <div class="mt-6">            
             <label for="bio" class="block mb-2 text-sm font-medium text-gray-900">Bio</label>
-            <textarea id="bio"  name="bio" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Write your thoughts here...">
-                {{ old('bio', $kahim->bio) }}
-            </textarea>
+            <textarea id="bio"  name="bio" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Write your thoughts here...">{{ old('bio', $kahim->bio) }}</textarea>
         </div>  
         <div class="mt-6">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload file</label>

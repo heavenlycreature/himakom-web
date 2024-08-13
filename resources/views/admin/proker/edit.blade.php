@@ -11,9 +11,7 @@
         </div>
         <div class="mt-6">            
             <label for="bio" class="block mb-2 text-sm font-medium text-gray-900">Deskripsi</label>
-            <textarea id="bio" name="deskripsi" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Write your thoughts here...">
-                {{ old('deskripsi', $proker->deskripsi) }}
-            </textarea>
+            <textarea id="bio" name="deskripsi" rows="6" class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500" placeholder="Write your thoughts here...">{{ old('deskripsi', $proker->deskripsi) }}</textarea>
         </div> 
     <button type="submit" class="mt-6 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center">Submit</button>
 </form>

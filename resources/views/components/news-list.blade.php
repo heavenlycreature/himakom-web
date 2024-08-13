@@ -1,7 +1,11 @@
           <article data-aos="zoom-in-up"  data-aos-once="true" data-aos-delay="{{ $loop * 2 }}"
            class="flex max-w-lg flex-col items-start gap-1">
              <div class="thumbnail rounded-sm">
+                  @if ($img)
+                  <img src={{ asset('storage/' . $img) }} class="object-cover h-48 w-96 rounded-sm" alt="thumbnail" />
+                  @else
                   <img src={{ $img }} class="object-cover h-48 w-96 rounded-sm" alt="thumbnail" />
+                  @endif
               </div>
             <div class="flex items-center gap-x-4 text-xs">
               <time dateTime={{ $publish }} class="text-slate-200">

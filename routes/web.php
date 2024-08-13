@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
 use App\Http\Controllers\BlogsController;
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\GuestController;
 use App\Http\Controllers\JournalController;
 use App\Http\Controllers\KahimController;
 use App\Http\Controllers\ProkerController;
@@ -20,23 +21,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('pages.main', [
-        'title' => 'home',
-    ]);
-})->name('beranda');
-Route::get('/tentang', function() {
-    return view('pages.about', [
-        'title' => 'Tentang Kami',
-    ]);
-})->name('tentang');
-Route::get('/jurnal', function() {
-    return view('pages.jurnal.journal', [
-        'title' => 'Daftar Jurnal',
-    ]);
-})->name('jurnal');
+Route::get('/', [GuestController::class, 'main'])->name('beranda');
+Route::get('/tentang', [GuestController::class, 'about'])->name('tentang');
+Route::get('/jurnal', [GuestController::class, 'journal'])->name('jurnal');
 
-Route::get('/artikel', [BlogsController::class, 'index'])->name('artikel');
+Route::get('/artikel', [GuestController::class, 'artikel'])->name('artikel');
 // Login method
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');
@@ -60,7 +49,30 @@ Route::middleware(['auth'])->group(function () {
     Route::match(['PUT', 'PATCH'], '/dashboard/proker/{id}', [ProkerController::class, 'update'])->name('proker.update');
     // delete
     Route::delete('/dashboard/proker/{id}', [ProkerController::class, 'destroy'])->name('proker.destroy');
-
+    
     // Journal
-    Route::get('/dashboard/journal', [JournalController::class, 'index'])->name('journal.index');
+    Route::get('/dashboard/journals', [JournalController::class, 'index'])->name('journal.index');
+    // create
+    Route::get('/dashboard/journals/create', [JournalController::class, 'create'])->name('journal.create');
+    Route::post('/dashboard/journals', [JournalController::class, 'store'])->name('journal.store');
+    // show
+    Route::get('/dashboard/journals/{slug}', [JournalController::class, 'show'])->name('journal.show');
+    // edit
+    Route::get('/dashboard/journals/{slug}/edit', [JournalController::class, 'edit'])->name('journal.edit');
+    Route::match(['PUT', 'PATCH'], '/dashboard/journals/{slug}', [JournalController::class, 'update'])->name('journal.update');
+    // delete
+    Route::delete('/dashboard/journals/{slug}', [JournalController::class, 'destroy'])->name('journals.destroy');
+    
+    // blogs
+    Route::get('/dashboard/blogs', [BlogsController::class, 'index'])->name('blogs.index');
+    // create
+    Route::get('/dashboard/blogs/create', [BlogsController::class, 'create'])->name('blogs.create');
+    Route::post('/dashboard/blogs', [BlogsController::class, 'store'])->name('blogs.store');
+    // show
+    Route::get('/dashboard/blogs/{slug}', [BlogsController::class, 'show'])->name('blogs.show');
+    // edit
+    Route::get('/dashboard/blogs/{slug}/edit', [BlogsController::class, 'edit'])->name('blogs.edit');
+    Route::match(['PUT', 'PATCH'], '/dashboard/blogs/{slug}', [BlogsController::class, 'update'])->name('blogs.update');
+    // delete
+    Route::delete('/dashboard/blogs/{slug}', [BlogsController::class, 'destroy'])->name('blogs.destroy');
 });
