@@ -1,14 +1,16 @@
 <?php
 
+use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\BlogsController;
+use App\Http\Controllers\GuestController;
+use App\Http\Controllers\KahimController;
+use App\Http\Controllers\UsersController;
+use App\Http\Controllers\ProkerController;
+use App\Http\Controllers\JournalController;
+use App\Http\Controllers\ProfileController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\LogoutController;
-use App\Http\Controllers\BlogsController;
-use App\Http\Controllers\DashboardController;
-use App\Http\Controllers\GuestController;
-use App\Http\Controllers\JournalController;
-use App\Http\Controllers\KahimController;
-use App\Http\Controllers\ProkerController;
-use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -33,7 +35,14 @@ Route::middleware(['guest'])->group(function () {
 });
 // Authenticated Method
 Route::middleware(['auth'])->group(function () {
-    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard');
+    Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard')->middleware('UserAccess:super-admin');
+    Route::get('/home', function () {
+        if (auth()->user()->role == 'super-admin'){
+            return redirect()->route('dashboard');
+        }else if(auth()->user()->role == 'admin'){
+            return redirect()->route('journal.index');
+        }
+    }); 
     Route::post('/logout', LogoutController::class)->name('logout');
     
     // Kahim method
@@ -75,4 +84,22 @@ Route::middleware(['auth'])->group(function () {
     Route::match(['PUT', 'PATCH'], '/dashboard/blogs/{slug}', [BlogsController::class, 'update'])->name('blogs.update');
     // delete
     Route::delete('/dashboard/blogs/{slug}', [BlogsController::class, 'destroy'])->name('blogs.destroy');
+    
+    Route::middleware(['UserAccess:super-admin'])->group(function () {
+    // users
+    Route::get('/dashboard/users', [UsersController::class, 'index'])->name('users.index');
+    // create
+    Route::get('/dashboard/users/create', [UsersController::class, 'create'])->name('users.create');
+    Route::post('/dashboard/users', [UsersController::class, 'store'])->name('users.store');
+    // edit
+    Route::get('/dashboard/users/{username}/edit', [UsersController::class, 'edit'])->name('users.edit');
+    Route::match(['PUT', 'PATCH'], '/dashboard/users/{username}', [UsersController::class, 'update'])->name('users.update');
+    // delete
+    Route::delete('/dashboard/users/{username}', [UsersController::class, 'destroy'])->name('users.destroy');
+    });
+
+    Route::get('/profile', [ProfileController::class, 'show'])->name('profile.show');
+    Route::get('/profile/change-password', [ProfileController::class, 'changePassword'])->name('profile.changePassword');
+    Route::patch('/profile/update-password', [ProfileController::class, 'updatePassword'])->name('profile.updatePassword');
+
 });

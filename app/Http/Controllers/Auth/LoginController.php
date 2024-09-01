@@ -8,14 +8,14 @@ use Illuminate\Http\Request;
 
 class LoginController extends Controller
 {
-    public $title = 'Login';
+    
     public function index(){
-        return view('auth.login');
+        return view('auth.login', ['title' => 'Login']);
     }
     public function store(LoginRequest $request){
         if(auth()->attempt($request->validated())) {
             return redirect()->intended('/dashboard');
         }
-        return back();
+        return back()->withErrors('Periksa kembali username dan password Anda.');
     }
 }
