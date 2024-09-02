@@ -165,9 +165,9 @@
              @endif
             <input 
             name="pdf" 
-            class="block w-full text-sm rounded-lg cursor-pointer @error('pdf') bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500 @else bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 @enderror" 
+            class="block w-full text-sm rounded-lg @error('pdf') bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 dark:bg-gray-700 dark:text-red-500 dark:placeholder-red-500 dark:border-red-500 @else bg-gray-50 border border-gray-300 text-gray-900 focus:ring-blue-500 focus:border-blue-500 @enderror" 
             id="file_input" 
-            type="file"
+            type="url"
             accept=".pdf"
             value="{{ old('pdf', $journal->pdf) }}"
             >

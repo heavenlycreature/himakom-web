@@ -30,7 +30,7 @@ class JournalController extends Controller
     }
 
     public function create(){
-        return view('admin.journal.form.create');
+        return view('admin.journal.form.create', ['title' => 'Tambah Jurnal']);
     }
 
     public function store(Request $request){
@@ -43,18 +43,14 @@ class JournalController extends Controller
             'volume' => 'required',
             'slug' => 'required',
             'rujuk' => 'required',
-            'pdf' => 'required|file|mimes:pdf',
+            'pdf' => 'required|url',
         ];
     
         $validatedData = $request->validate($rules);
 
         try {
             DB::beginTransaction();
-        
-            if ($request->hasFile('pdf')) {
-                $journalPath = $request->file('pdf')->store('journals-pdf', 'public');
-                $validatedData['pdf'] = $journalPath;
-            }
+    
     
             Journal::create($validatedData);
     
@@ -63,11 +59,7 @@ class JournalController extends Controller
             return redirect(route('journal.index'))->with('success', 'Jurnal berhasil ditambahkan!');
         } catch (\Exception $e) {
             DB::rollBack();
-    
-            // If an journal was uploaded, delete it
-            if (isset($journalPath)) {
-                Storage::delete($journalPath);
-            }
+ 
     
             // Log the error
             Log::error('Blog creation failed: ' . $e->getMessage());
@@ -119,7 +111,7 @@ class JournalController extends Controller
              'volume' => 'required',
              'slug' => 'required',
              'rujuk' => 'required',
-             'pdf' => 'required|file|mimes:pdf',
+             'pdf' => 'required|url',
          ];
      
          $validatedData = $request->validate($rules);
@@ -128,10 +120,7 @@ class JournalController extends Controller
              DB::beginTransaction();
          
              if ($request->hasFile('pdf')) {
-                // Delete old PDF if exists
-                if ($journal->pdf) {
-                    Storage::disk('public')->delete($journal->pdf);
-                }
+         
                 $pdfPath = $request->file('pdf')->store('journals-pdf', 'public');
                 $validatedData['pdf'] = $pdfPath;
             }

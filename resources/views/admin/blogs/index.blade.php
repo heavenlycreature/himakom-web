@@ -2,6 +2,9 @@
 
 @section('content')
 <div class="p-6 bg-white shadow-md rounded-lg">
+        @if (session('success'))
+            <x-alert-success :message="session('success')" />
+        @endif
         <div class="flex justify-between ">
             <h2 class="text-3xl font-bold mb-8">Hallo admin infokom</h2>
             <a href="{{ route('blogs.create') }}" class="px-3 py-2 text-sm lg:text-xl text-white bg-blue-500 rounded-lg">Tambah baru</a>

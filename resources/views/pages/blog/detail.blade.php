@@ -20,29 +20,11 @@
     
     <!-- Informasi Himpunan -->
     <div class="flex items-center mb-10">
-        <img src="{{ asset('img/logohimakom.png') }}" alt="Logo Himpunan" class="h-20 w-20 mr-4">
+        <img src="{{ asset('storage/' . $blog->user->profile) }}" alt="Logo Himpunan" class="h-20 w-20 mr-4">
         <div>
-            <h3 class="text-xl font-bold text-gray-800">HIMATIKA</h3>
-            <p class="text-gray-600">Himpunan Mahasiswa Matematika (HIMATIKA) Universitas Pakuan adalah organisasi mahasiswa yang berfokus pada pengembangan akademik dan keterampilan anggota di bidang matematika. HIMATIKA berperan sebagai wadah bagi mahasiswa untuk memperdalam ilmu matematika melalui berbagai kegiatan seperti seminar, workshop, kompetisi, dan diskusi ilmiah.</p>
+            <h3 class="text-xl font-bold text-gray-800">{{ $blog->user->name }}</h3>
+            <p class="text-gray-600">{{ $blog->user->bio }}</p>
         </div>
-    </div>
-    
-    <!-- Daftar Komentar -->
-    <div id="commentsSection" class="mb-10">
-        <h3 class="text-xl font-bold text-gray-800 mb-4">Comments (0)</h3>
-        <div id="commentsList">
-            <!-- Komentar akan ditambahkan di sini -->
-        </div>
-    </div>
-    
-    <!-- Fitur Komentar -->
-    <div class="mb-10">
-        <h3 class="text-xl font-bold text-gray-800 mb-4">Leave the Comment</h3>
-        <form id="commentForm">
-            <textarea id="comment" rows="4" class="w-full px-4 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-800" placeholder="Your Comment"></textarea>
-            <input type="text" id="name" class="w-full px-4 py-2 mt-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-purple-800" placeholder="Your Name">
-            <button type="submit" class="px-4 py-2 mt-4 bg-purple-800 text-white rounded-lg">Submit</button>
-        </form>
     </div>
 </div>
 

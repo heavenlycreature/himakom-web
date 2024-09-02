@@ -10,7 +10,7 @@ use App\Providers\RouteServiceProvider;
 
 class LoginController extends Controller
 {
-    public $title = 'Login';
+    
     public function index(){
         return view('auth.login', [
             'title' => 'Login',

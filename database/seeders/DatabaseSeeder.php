@@ -3,7 +3,7 @@
 namespace Database\Seeders;
 
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
-
+use \App\Models\User;
 use App\Models\Blogs;
 use App\Models\Journal;
 use App\Models\Kahim;
@@ -17,7 +17,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-        \App\Models\User::factory(1)->create();
+        User::factory(1)->create();
         Blogs::factory(15)->create();
         Kahim::factory(1)->create();
         Proker::factory(3)->create();

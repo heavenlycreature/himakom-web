@@ -124,9 +124,7 @@ class BlogsController extends Controller
 
         try {
             DB::beginTransaction();
-    
-            $validatedData['user_id'] = auth()->id();
-    
+        
             if($request->hasFile('img')){
                 if($request->oldImage){
                     Storage::delete($request->oldImage);

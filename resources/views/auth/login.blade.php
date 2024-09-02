@@ -62,8 +62,15 @@
                 type="text"
                 id="username"
                 name="username"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+                class=" @error('username') mt-1 block w-full rounded-md shadow-sm bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @else mt-1 block w-full rounded-md shadow-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 sm:text-sm @enderror"
+                value="{{ old('username') }}"
+               
               />
+              @error('username')
+                <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">Oh, shibal!</span> {{ $message }}
+                </p>
+             @enderror
             </div>
       
             <div>
@@ -72,8 +79,14 @@
                 type="password"
                 id="Password"
                 name="password"
-                class="mt-1 block w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm"
+               class=" @error('username') mt-1 block w-full rounded-md shadow-sm bg-red-50 border border-red-500 text-red-900 placeholder-red-700 focus:ring-red-500 focus:border-red-500 @else mt-1 block w-full rounded-md shadow-sm border border-gray-300 focus:ring-blue-500 focus:border-blue-500 sm:text-sm @enderror"
+               
               />
+              @error('password')
+                <p class="mt-2 text-sm text-red-600 dark:text-red-500">
+                    <span class="font-medium">Oh, shibal!</span> {{ $message }}
+                </p>
+             @enderror
             </div>
       
             <div>
@@ -89,6 +102,7 @@
       </main>
    </div>
   </section>
+  
   @endsection
   
   

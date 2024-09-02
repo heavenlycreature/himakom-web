@@ -36,7 +36,7 @@ class GuestController extends Controller
                 'source' => $journal->sumber,
                 'year' => $journal->tahun,
                 'citations' => $journal->rujuk,
-                'pdf' => $journal->slug,
+                'pdf' => $journal->pdf,
             ];
         });
         return view('pages.jurnal.journal', [
@@ -64,13 +64,5 @@ class GuestController extends Controller
         ]);
     }
 
-    public function showJurnal($slug){
-        $journal = Journal::where('slug' , $slug)->firstOrFail();
-
-        return view('pages.jurnal.detail', [
-            'title' => $journal->judul,
-            'journal' => $journal
-        ]);
-    }
 
 }

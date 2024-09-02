@@ -6,7 +6,7 @@
 <!-- Search Bar -->
 <div class="container mx-auto px-6 py-10">
     <div class="flex justify-center">
-        <input type="text" id="searchBar" class="w-full md:w-1/2 p-3 rounded-lg shadow-md" placeholder="Cari Jurnal/Skripsi" oninput="searchJournal()">
+        <input type="text" id="searchBar" class="w-full md:w-1/2 p-3 rounded-lg shadow-md" placeholder="Cari Jurnal..." oninput="searchJournal()">
     </div>
 </div>
 
@@ -43,11 +43,16 @@
         paginatedJournals.forEach(journal => {
             const journalItem = `
                 <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
-                    <div>
-                        <a href="/jurnal/${journal.pdf}" class="text-blue-600 hover:underline text-lg font-semibold">${journal.title}</a>
+                    <div> 
+                        <p class="text-blue-600 cursor-pointer hover:underline text-lg font-semibold">${journal.title}</p>
                         <p class="text-gray-600">${journal.author} · ${journal.year} · Dirujuk ${journal.citations} kali — ${journal.source}</p>
                     </div>
-                    <a href="${journal.pdf}" class="px-4 py-2 bg-gray-300 rounded-lg">PDF</a>
+                        <div class="flex items-center">
+                            <a href="${journal.pdf}" target="_blank" class="px-4 py-2 bg-gray-300 rounded-lg flex items-center group">
+                                PDF
+                                <span class="ml-2 transform group-hover:translate-x-2 transition-transform duration-300 ease-in-out">➔</span>
+                            </a>
+                        </div>
                 </div>
             `;
             journalList.innerHTML += journalItem;
