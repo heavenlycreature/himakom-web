@@ -16,7 +16,7 @@ class ProkerController extends Controller
         try {
             $validatedData = $this->validateRequest($request);
             Proker::create($validatedData);
-            return redirect(route('dashboard'))->with('success', 'Terima kasih atas feedback yang kamu kasih!');
+            return redirect(route('dashboard'))->with('success', 'Program kerja berhasil ditambahkan!');
         } catch (ValidationException $exception) {
             throw new ValidationException($exception->validator, $this->formatValidationErrors($exception->errors()));
         }
@@ -70,10 +70,10 @@ public function update(Request $request, $id){
         $proker->update($validatedData);
         $proker->save();
     
-        return redirect('/dashboard')->with('success', 'Data berhasil Di update!!');
+        return redirect('/dashboard')->with('success', 'Program kerja berhasil Di update!!');
         } 
         catch (ValidationException $exception) {
-        throw new ValidationException($exception->validator, $this->formatValidationErrors($exception->errors()));
+        return redirect()->back()->withErrors($exception->errors())->withInput();
     }
 
 
@@ -82,7 +82,7 @@ public function update(Request $request, $id){
 public function destroy($id){
     $proker = Proker::findOrFail($id);
     $proker->delete();  
-    return redirect(route('dashboard'))->with('success', 'Data berhasil dihapus!');
+    return redirect(route('dashboard'))->with('success', 'Program kerja berhasil dihapus!');
 }
 
 }

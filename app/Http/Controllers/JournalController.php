@@ -13,7 +13,7 @@ use Illuminate\Support\Facades\Storage;
 class JournalController extends Controller
 {
     public function index(){
-        $journals = Journal::all()->map(function ($journal){
+        $journals = Journal::latest()->get()->map(function ($journal){
             return [
                 'judul' => $journal->judul,
                 'penerbit' => $journal->penerbit,
@@ -60,7 +60,7 @@ class JournalController extends Controller
     
             DB::commit();
     
-            return redirect(route('journal.index'))->with('success', 'Data berhasil ditambahkan!');
+            return redirect(route('journal.index'))->with('success', 'Jurnal berhasil ditambahkan!');
         } catch (\Exception $e) {
             DB::rollBack();
     
@@ -137,7 +137,7 @@ class JournalController extends Controller
             }
             $journal->update($validatedData);
             DB::commit();
-            return redirect(route('journal.index'))->with('success', 'Data berhasil ditambahkan!');
+            return redirect(route('journal.index'))->with('success', 'Jurnal berhasil di update!');
          } catch (\Exception $e) {
              DB::rollBack();
      
@@ -165,6 +165,6 @@ class JournalController extends Controller
     
         $journal->delete();
     
-        return redirect(route('journal.index'))->with('success', 'Post deleted!!!');
+        return redirect(route('journal.index'))->with('success', 'Jurnal terhapus!!!');
     }
 }

@@ -44,7 +44,7 @@
             const journalItem = `
                 <div class="flex justify-between items-center bg-white p-4 rounded-lg shadow-md">
                     <div>
-                        <a href="${journal.pdf}" class="text-blue-600 hover:underline text-lg font-semibold">${journal.title}</a>
+                        <a href="/jurnal/${journal.pdf}" class="text-blue-600 hover:underline text-lg font-semibold">${journal.title}</a>
                         <p class="text-gray-600">${journal.author} · ${journal.year} · Dirujuk ${journal.citations} kali — ${journal.source}</p>
                     </div>
                     <a href="${journal.pdf}" class="px-4 py-2 bg-gray-300 rounded-lg">PDF</a>

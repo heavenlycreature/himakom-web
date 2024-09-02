@@ -6,20 +6,16 @@
 <!-- Main Content -->
 <div class="container mx-auto px-6 py-10">
     <!-- Judul Artikel -->
-    <h1 class="text-3xl font-bold text-gray-800 mb-6">Cara makan sate yang benar</h1>
+    <h1 class="text-3xl font-bold text-gray-800 mb-6">{{ $blog->title }}</h1>
     
     <!-- Gambar Artikel -->
     <div class="w-full h-64 mb-6">
-        <img src="{{ asset('images/coverartikel&berita.png') }}" alt="Gambar Artikel" class="object-cover h-full w-full">
+        <img src="{{ asset('storage/' . $blog->img) }}" alt="Gambar Artikel" class="object-cover h-full w-full">
     </div>
     
     <!-- Paragraf Artikel -->
     <div class="prose prose-lg max-w-none mb-10">
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla vitae egestas ex. Vestibulum euismod felis in dui ullamcorper, at consequat ex scelerisque. Integer vitae tincidunt lectus. In hac habitasse platea dictumst. Ut sollicitudin, lectus in ullamcorper consectetur, nunc purus volutpat orci, sed varius enim risus non elit. Curabitur pharetra nec metus non consequat.</p>
-        <p>Vivamus elementum ligula ut nisi aliquam, at interdum nisl euismod. Nulla facilisi. Proin fringilla, augue sit amet gravida vehicula, velit lacus tincidunt odio, non consequat turpis sapien vel arcu. Integer porttitor orci sed ligula feugiat, a finibus orci malesuada. Sed congue justo sed lorem bibendum ultricies. Cras eget nunc sit amet leo tristique dignissim. Integer consequat nisl quis lacus dapibus gravida.</p>
-        <p>Mauris sit amet nulla elit. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Suspendisse varius sollicitudin orci at scelerisque. Sed dignissim dapibus libero. Nunc sed ultricies tortor. Curabitur quis elementum justo. In pretium turpis ac ligula vestibulum, at condimentum est pharetra. Curabitur in diam et odio bibendum malesuada. Aenean ultricies velit eget felis fermentum, eget bibendum leo iaculis.</p>
-        <p>Etiam auctor lorem orci, et cursus odio dignissim et. Integer gravida, metus vitae scelerisque varius, sapien nunc vestibulum sem, nec vehicula nulla risus in purus. Curabitur sit amet sapien velit. Suspendisse potenti. Vivamus fermentum, nunc sed condimentum gravida, nulla ex consectetur odio, et tincidunt enim mi at ligula. Vivamus vel egestas lacus.</p>
-        <p>Fusce gravida venenatis felis vel varius. Donec maximus tellus eget dolor tincidunt lacinia. Sed euismod purus in neque varius, in vehicula elit pulvinar. Phasellus scelerisque efficitur ligula non sagittis. Nulla facilisi. Aliquam id pharetra augue, ut tempor turpis. Curabitur aliquam bibendum augue. Ut convallis urna at sapien ullamcorper, et fermentum sem facilisis.</p>
+        {!! $blog->description !!}
     </div>
     
     <!-- Informasi Himpunan -->

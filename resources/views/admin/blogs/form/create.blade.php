@@ -47,6 +47,7 @@
                 </p>
             @enderror     
         </div> 
+        
         <div class="mt-6">
             <label class="block mb-2 text-sm font-medium text-gray-900" for="file_input">Upload file</label>
             <img class="img-preview h-auto max-w-lg rounded-lg hidden">

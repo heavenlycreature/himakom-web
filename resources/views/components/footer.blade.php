@@ -3,11 +3,7 @@
         <div class="flex flex-wrap justify-between">
             <div class="w-full md:w-1/3">
                 <h3 class="text-xl font-bold mb-4">Butuh Dukungan Dari Kami?</h3>
-                <p>Jangan Ragu, dan Berikan Ideumu Kepada Kami</p>
-                <div class="flex mt-4">
-                    <input type="email" placeholder="Masukkan emailmu" class="px-4 py-2 rounded-l-lg focus:outline-none">
-                    <button class="px-4 py-2 bg-white text-purple-800 rounded-r-lg">Subscribe</button>
-                </div>
+                <p>Jangan Ragu, dan Berikan Idemu Kepada Kami</p>
                 <div class="flex space-x-4 mt-4">
                     <a href="#" class="text-2xl"><i class="fab fa-facebook"></i></a>
                     <a href="#" class="text-2xl"><i class="fab fa-instagram"></i></a>

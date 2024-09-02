@@ -48,6 +48,6 @@ class KahimController extends Controller
         $kahim->{'visi-misi'} = $visiMisi;
         $kahim->save();
 
-        return redirect('/dashboard')->with('success', 'Data berhasil Di update!!');
+        return redirect('/dashboard')->with('success', 'Data Ketua Himpunan berhasil Di update!!');
     }
 }

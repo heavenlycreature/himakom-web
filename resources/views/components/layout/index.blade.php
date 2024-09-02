@@ -15,5 +15,7 @@
 <body>
         @yield('content')
 <script src="https://kit.fontawesome.com/11df88e4bb.js" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.9.359/pdf.worker.min.js"></script>
 </body>
 </html>

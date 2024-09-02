@@ -14,7 +14,7 @@
             </div>
             <div class="group relative">
               <h3 class=" text-base font-semibold leading-6 text-white group-hover:text-gray-300">
-                <a href="/{{ $slug }}">
+                <a href="{{ route('artikel.show', $slug) }}">
                   <span class="inset-0">
                       {{ $title }}
                     <span/>

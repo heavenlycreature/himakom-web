@@ -16,7 +16,7 @@ class BlogsController extends Controller
      */
     public function index()
     {
-        $blogs = Blogs::all()->map(function ($blog){
+        $blogs = Blogs::latest()->get()->map(function ($blog){
             return [
                 'title' => $blog->title,
                 'excerpt' => $blog->excerpt,
@@ -65,7 +65,7 @@ class BlogsController extends Controller
     
             DB::commit();
     
-            return redirect(route('blogs.index'))->with('success', 'Data berhasil ditambahkan!');
+            return redirect(route('blogs.index'))->with('success', 'Artikel telah ditambahkan!');
         } catch (\Exception $e) {
             DB::rollBack();
     
@@ -138,7 +138,7 @@ class BlogsController extends Controller
     
             DB::commit();
     
-            return redirect(route('blogs.index'))->with('success', 'Data berhasil ditambahkan!');
+            return redirect(route('blogs.index'))->with('success', 'Artikel telah di perbaharui');
         } catch (\Exception $e) {
             DB::rollBack();
     
@@ -170,7 +170,7 @@ class BlogsController extends Controller
     
         $blog->delete();
     
-        return redirect(route('blogs.index'))->with('success', 'Post deleted!!!');
+        return redirect(route('blogs.index'))->with('success', 'Artikel di hapus!!!');
     }
 }
 

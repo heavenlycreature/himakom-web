@@ -24,8 +24,10 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [GuestController::class, 'main'])->name('beranda');
 Route::get('/tentang', [GuestController::class, 'about'])->name('tentang');
 Route::get('/jurnal', [GuestController::class, 'journal'])->name('jurnal');
+Route::get('/jurnal/{slug}', [GuestController::class, 'showJurnal'])->name('jurnal.show');
 
 Route::get('/artikel', [GuestController::class, 'artikel'])->name('artikel');
+Route::get('/artikel/{slug}', [GuestController::class, 'showArtikel'])->name('artikel.show');
 // Login method
 Route::middleware(['guest'])->group(function () {
     Route::get('/login', [LoginController::class, 'index'])->name('login');

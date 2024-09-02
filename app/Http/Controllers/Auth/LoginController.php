@@ -2,20 +2,30 @@
 
 namespace App\Http\Controllers\Auth;
 
-use App\Http\Controllers\Controller;
 use App\Http\Controllers\Requests\LoginRequest;
-use Illuminate\Http\Request;
+use Illuminate\Http\RedirectResponse;
+use App\Http\Controllers\Controller;
+use App\Providers\RouteServiceProvider;
+
 
 class LoginController extends Controller
 {
     public $title = 'Login';
     public function index(){
-        return view('auth.login');
+        return view('auth.login', [
+            'title' => 'Login',
+        ]);
     }
-    public function store(LoginRequest $request){
-        if(auth()->attempt($request->validated())) {
-            return redirect()->intended('/dashboard');
-        }
-        return back();
+    /**
+     * Handle an incoming authentication request.
+     */
+    public function store(LoginRequest $request): RedirectResponse
+    {
+        $request->authenticate();
+
+        $request->session()->regenerate();
+
+        return redirect()->intended(route('dashboard'));
     }
+
 }
